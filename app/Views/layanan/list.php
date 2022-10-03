@@ -1,11 +1,7 @@
 <?= $this->extend('template/template'); ?>
 <?= $this->section('content'); ?>
 <div class="col-sm-6">
-<<<<<<< HEAD
     <h1>Jenis Layanan</h1>
-=======
-        <h1>Jenis Layanan</h1>
->>>>>>> a4b9a2029f84faf9ada1beab9ec165d5afe4af73
 </div>
 <a href="/create" type="button" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
 <table class="table table-striped">
