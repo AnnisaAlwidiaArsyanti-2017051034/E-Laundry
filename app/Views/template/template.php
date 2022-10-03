@@ -22,7 +22,11 @@
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
+<<<<<<< HEAD
       <a href="/app/Views/pages/home.php" class="navbar-brand">
+=======
+      <a href="/assets/adminlte/index3.html" class="navbar-brand">
+>>>>>>> a4b9a2029f84faf9ada1beab9ec165d5afe4af73
         <span class="brand-text font-weight-light">E-Laundry</span>
       </a>
 
@@ -34,10 +38,17 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
+<<<<<<< HEAD
             <a href="/layanan" class="nav-link">Jenis Layanan</a>
           </li>
           <li class="nav-item">
             <a href="/app/Views/pages/about.php" class="nav-link">About</a>
+=======
+            <a href="index3.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+>>>>>>> a4b9a2029f84faf9ada1beab9ec165d5afe4af73
           </li>
         </ul>
 
