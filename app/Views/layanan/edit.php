@@ -1,3 +1,5 @@
+<?= $this->extend('template/template'); ?>
+<?= $this->section('content'); ?>
 <form action="/update/<?= $layanan['layanan_id'] ?>" method="post">
     <div class="row">
         <div class="col-6">
@@ -17,3 +19,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<?= $this->endSection(); ?>
