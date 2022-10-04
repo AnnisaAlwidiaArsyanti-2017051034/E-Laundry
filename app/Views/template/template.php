@@ -34,10 +34,19 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a href="/home" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Transaksi</a>
+          </li>
+          <li class="nav-item">
             <a href="/layanan" class="nav-link">Jenis Layanan</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Laporan Pendapatan</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about" class="nav-link">About</a>
           </li>
         </ul>
 
