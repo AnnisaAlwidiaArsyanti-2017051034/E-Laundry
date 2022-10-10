@@ -99,6 +99,6 @@
 <script src="/assets/adminlte/dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="assets/adminlte/plugins/summernote/summernote-bs4.min.js"></script>
-
+ 
 </body>
 </html>
