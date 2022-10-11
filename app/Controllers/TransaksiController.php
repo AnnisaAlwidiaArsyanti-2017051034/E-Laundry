@@ -47,6 +47,7 @@ class TransaksiController extends BaseController
         $transaksiModel->save($data);
         return redirect()->to('/transaksi');
     }
+<<<<<<< HEAD
 
     public function delete($no_invoice){
         $transaksiModel = new Transaksi();
@@ -88,4 +89,6 @@ class TransaksiController extends BaseController
         return redirect()->to('/transaksi');
     }
 
+=======
+>>>>>>> e0276e2efc64af130136eb0bbcb7d6a3094ca949
 }
