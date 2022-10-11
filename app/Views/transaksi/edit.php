@@ -10,11 +10,11 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="nama_pelanggan">Nama Pelanggan</label>
-                <input type="text" name="nama_pelanggan" class="form-control" id="nama_pelanggan" value="<?= $transaksi['jenis_layanan']?>">
+                <input type="text" name="nama_pelanggan" class="form-control" id="nama_pelanggan" value="<?= $transaksi['nama_pelanggan']?>">
             </div>
             <div class="form-group">
-                <label for="nomor_telp_pelanggan">No Telp Pelanggan</label>
-                <input type="text" name="nomor_telp_pelanggan" class="form-control" id="nomor_telp_pelanggan" value="<?= $transaksi['nomor_telp_pelanggan']?>">
+                <label for="nomor_tlp_pelanggan">No Telp Pelanggan</label>
+                <input type="text" name="nomor_tlp_pelanggan" class="form-control" id="nomor_tlp_pelanggan" value="<?= $transaksi['nomor_tlp_pelanggan']?>">
             </div>
             <div class="form-group">
                 <label for="alamat_pelanggan">Alamat Pelanggan</label>
