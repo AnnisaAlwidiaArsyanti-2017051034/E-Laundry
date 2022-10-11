@@ -7,7 +7,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">No Invoice</th>
       <th scope="col">Nama Pelanggan</th>
       <th scope="col">No. Telp. Pelanggan</th>
@@ -28,8 +27,7 @@
         foreach ($transaksi as $trans) :
     ?>
     <tr>
-      <th scope="row"><?=$no?></th>
-      <td><?$trans['no_invoice']?></td>
+      <th><?=$trans['no_invoice']?></th>
       <td><?=$trans['nama_pelanggan']?></td>
       <td><?=$trans['nomor_tlp_pelanggan']?></td>
       <td><?=$trans['alamat_pelanggan']?></td>

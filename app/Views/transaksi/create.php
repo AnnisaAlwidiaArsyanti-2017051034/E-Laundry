@@ -3,7 +3,7 @@
 <div class="card card-primary">
     
     <div class="card-header">
-        <h3 class="card-title">Tambah Jenis Laundry</h3>
+        <h3 class="card-title">Tambah Transaksi</h3>
     </div>
     <!-- /.card-header -->
     

@@ -45,6 +45,9 @@ $routes->post('/delete/(:num)', 'LayananController::delete/$1');
 $routes->get('/transaksi', 'TransaksiController::index');
 $routes->get('/createTransaksi', 'TransaksiController::create');
 $routes->post('/storeTransaksi', 'TransaksiController::store');
+$routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1');
+$routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1');
+$routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1');
 $routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 
