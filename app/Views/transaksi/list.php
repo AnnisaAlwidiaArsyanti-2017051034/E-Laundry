@@ -34,7 +34,7 @@
       <td><?=$trans['nomor_tlp_pelanggan']?></td>
       <td><?=$trans['alamat_pelanggan']?></td>
       <td><?=$trans['tanggal_masuk']?></td>
-      <td><?=$trans['berat']?></td>
+      <td><?=$trans['berat']?> KG</td>
       <td><?=$trans['layanan']?></td>
       <td><?=$trans['tanggal_keluar']?></td>
       <td><?=$trans['biaya']?></td>
@@ -42,8 +42,8 @@
       <td><?=$trans['status_pengambilan']?></td>
       <td>
         <div class="d-flex">
-          <a href="/edit/<?= $trans['no_invoice'] ?>"><button class="btn btn-warning mr-3"><i class="fas fa-edit"></i> Edit</button></a>                    
-          <form action="/delete/<?= $trans['no_invoice'] ?>" method="post">
+          <a href="/editTransaksi/<?= $trans['no_invoice'] ?>"><button class="btn btn-warning mr-3"><i class="fas fa-edit"></i> Edit</button></a>                    
+          <form action="/deleteTransaksi/<?= $trans['no_invoice'] ?>" method="post">
             <input type="hidden" name="_methode" value="DELETE">
             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
           </form>
