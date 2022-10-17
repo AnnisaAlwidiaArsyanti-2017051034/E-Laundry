@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Transaksi;
+use App\Controllers\LayananController;
+use App\Models\Layanan;
 
 class TransaksiController extends BaseController
 {
@@ -13,13 +15,19 @@ class TransaksiController extends BaseController
         $transaksi = $transaksiModel->findAll();
         $data = [
             'title' => 'Transaksi',
-            'transaksi' => $transaksi,            
+            'transaksi' => $transaksi,
         ];
         return view('transaksi/list', $data);
     }
     public function create(){
+        $layananModel = new Layanan();
+        $layanan = $layananModel->findAll();
+        $transaksiModel = new Transaksi();
+        $transaksi = $transaksiModel->findAll();
         $data = [
-            'title' => 'Tambah Transaksi',         
+            'title' => 'Tambah Transaksi',
+            'layanan' => $layanan,
+            'transaksi' => $transaksi,    
         ];
         return view('transaksi/create', $data);
     }
@@ -29,7 +37,7 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
-            'berat' => 'required|numeric',
+            'berat' => 'required',
             'layanan' => 'required|string',
             'status_pembayaran' => 'required|string',
         ])){
@@ -58,9 +66,12 @@ class TransaksiController extends BaseController
     public function edit($no_invoice){
         $transaksiModel = new Transaksi();
         $transaksi = $transaksiModel->find($no_invoice);
+        $layananModel = new Layanan();
+        $layanan = $layananModel->findAll();
         $data = [
             'title' => 'Edit Transaksi',
-            'transaksi' => $transaksi,            
+            'transaksi' => $transaksi,
+            'layanan' => $layanan,          
         ];
         return view('transaksi/edit', $data);
     }
@@ -70,7 +81,7 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
-            'berat' => 'required|numeric',
+            'berat' => 'required',
             'layanan' => 'required|string',
             'status_pembayaran' => 'required|string',
         ])){

@@ -23,16 +23,32 @@
                     </div>
                     <div class="form-group">
                         <label for="layanan">Pilih Layanan</label>
-                        <input type="text" name="layanan" class="form-control" id="layanan">
+                        <select name = "layanan" id="layanan" class="form-control" required>
+                            <option value="" hidden>--Pilih--</option>
+                            <?php foreach ($layanan as $lyn) : ?>
+                                <option value="<?=$lyn['jenis_layanan']?>"><?=$lyn['jenis_layanan']?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="berat">Berat</label>
                         <input type="text" name="berat" class="form-control" id="berat">
                     </div>
                     <div class="form-group">
-                        <label for="status_pembayaran">Status Pembayaran :</label>
-                        <input type="text" name="status_pembayaran" class="form-control" id="status_pembayaran">
+                        <label for="biaya">Biaya</label>
+                        <input type="text" name="biaya" class="form-control" id="biaya" value="" disabled>
                     </div>
+                    <div class="form-group">
+                        <label>Status Pembayaran :</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="status_pembayaran" name="status_pembayaran" value="Belum Bayar">
+                            <label class="custom-control-label" for="status_pembayaran">Belum Bayar</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="status_pembayaran2" name="status_pembayaran" value="Telah Bayar">
+                            <label class="custom-control-label" for="status_pembayaran2">Telah Bayar</label>
+                        </div>
+                    </div>                    
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

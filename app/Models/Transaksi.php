@@ -11,7 +11,7 @@ class Transaksi extends Model
     protected $primaryKey       = 'no_invoice';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'berat', 'layanan', 'status_pembayaran', 'status pengambilan'];
+    protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'berat', 'layanan', 'biaya', 'status_pembayaran', 'status pengambilan'];
 
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'tanggal_masuk';

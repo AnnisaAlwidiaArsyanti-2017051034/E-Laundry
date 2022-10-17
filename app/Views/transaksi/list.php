@@ -2,7 +2,9 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Transaksi</h1>
+  <h1 class="h3 mb-2 font-weight-bold text-gray-800">Transaksi</h1>
+  <a href="/createTransaksi" type="button" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
+              
   <!-- DataTables-->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -13,7 +15,6 @@
         <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
           <div class="row">
             <div class="col-sm-12 col-md-6">
-              <a href="/createTransaksi" type="button" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
               <div class="dataTables_length" id="dataTable_length">
                 <label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
                   <option value="10">10</option>
