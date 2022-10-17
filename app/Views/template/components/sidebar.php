@@ -2,7 +2,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-            <img src="\assets\washing-machine (1).png" width="35px" alt="brand">
+            <img src="\assets\washing-machine.png" width="35px" alt="brand">
         </div>
         <div class="sidebar-brand-text mx-3">E-Laundry</div>
     </a>
