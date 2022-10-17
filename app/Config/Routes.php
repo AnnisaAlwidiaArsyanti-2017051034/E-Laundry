@@ -37,19 +37,17 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/layanan', 'LayananController::index');
-$routes->get('/create', 'LayananController::create');
-$routes->post('/store', 'LayananController::store');
-$routes->get('/edit/(:num)', 'LayananController::edit/$1');
-$routes->post('/update/(:num)', 'LayananController::update/$1');
-$routes->post('/delete/(:num)', 'LayananController::delete/$1');
+$routes->get('/createLayanan', 'LayananController::create');
+$routes->post('/storeLayanan', 'LayananController::store');
+$routes->get('/editLayanan/(:num)', 'LayananController::edit/$1');
+$routes->post('/updateLayanan/(:num)', 'LayananController::update/$1');
+$routes->post('/deleteLayanan/(:num)', 'LayananController::delete/$1');
 $routes->get('/transaksi', 'TransaksiController::index');
 $routes->get('/createTransaksi', 'TransaksiController::create');
 $routes->post('/storeTransaksi', 'TransaksiController::store');
 $routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1');
 $routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1');
 $routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1');
-$routes->get('pages', 'Pages::index');
-$routes->get('(:any)', 'Pages::view/$1');
 
 /*
  * --------------------------------------------------------------------
