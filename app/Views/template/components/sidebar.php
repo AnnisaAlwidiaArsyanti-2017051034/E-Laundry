@@ -42,7 +42,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/about">
+        <a class="nav-link" href="#">
         <i class="fas fa-fw fa-cog"></i>
         <span>About</span></a>
     </li>
