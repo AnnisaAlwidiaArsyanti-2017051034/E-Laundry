@@ -27,7 +27,7 @@ class TransaksiController extends BaseController
         $data = [
             'title' => 'Tambah Transaksi',
             'layanan' => $layanan,
-            'transaksi' => $transaksi,    
+            'transaksi' => $transaksi,
         ];
         return view('transaksi/create', $data);
     }
@@ -39,7 +39,7 @@ class TransaksiController extends BaseController
             'alamat_pelanggan' => 'required|string',
             'berat' => 'required',
             'layanan' => 'required|string',
-            'status_pembayaran' => 'required|string',
+            'status_pembayaran' => 'required', 
         ])){
             return redirect()->to('/createTransaksi');
         }
@@ -50,7 +50,9 @@ class TransaksiController extends BaseController
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
             'berat' => $this->request->getPost('berat'),
             'layanan' => $this->request->getPost('layanan'),
-            'status_pembayaran' => $this->request->getPost('status_pembayaran'),
+            'biaya' => $this->request->getPost('biaya'),
+            'status_pembayaran' => $this->request->getPost('status_pembayaran'),            
+            'status_pengambilan' => $this->request->getPost('status_pengambilan'),
         ];
         $transaksiModel->save($data);
         return redirect()->to('/transaksi');
@@ -83,7 +85,8 @@ class TransaksiController extends BaseController
             'alamat_pelanggan' => 'required|string',
             'berat' => 'required',
             'layanan' => 'required|string',
-            'status_pembayaran' => 'required|string',
+            'status_pembayaran' => 'required',            
+            'status_pengambilan' => 'required',
         ])){
             return redirect()->to('/editTransaksi/'.$no_invoice);
         }
@@ -94,7 +97,9 @@ class TransaksiController extends BaseController
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
             'berat' => $this->request->getPost('berat'),
             'layanan' => $this->request->getPost('layanan'),
-            'status_pembayaran' => $this->request->getPost('status_pembayaran'),
+            'biaya' => $this->request->getPost('biaya'),
+            'status_pembayaran' => $this->request->getPost('status_pembayaran'),            
+            'status_pengambilan' => $this->request->getPost('status_pengambilan'),
         ];
         $transaksiModel->update($no_invoice, $data);
         return redirect()->to('/transaksi');

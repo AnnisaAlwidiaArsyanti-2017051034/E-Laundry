@@ -20,11 +20,11 @@ class Layanan extends Migration
                 'constraint' => '10',
             ],
             'estimasi_waktu' => [
-                'type' => 'VARCHAR',
-                'constraint' => '10',
+                'type' => 'INT',
+                'constraint' => 2,
             ],
             'tarif' => [
-                'type' => 'INT',
+                'type' => 'DECIMAL',
                 'constraint' => 7,
             ],
         ]);

@@ -49,7 +49,7 @@
                   <tr>
                     <th scope="row"><?=$no?></th>
                     <td><?=$lyn['jenis_layanan']?></td>
-                    <td><?=$lyn['estimasi_waktu']?></td>
+                    <td><?=$lyn['estimasi_waktu']?> hari</td>
                     <td><?=$lyn['tarif']?></td>
                     <td>
                       <div class="d-flex">

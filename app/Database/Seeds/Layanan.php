@@ -11,12 +11,12 @@ class Layanan extends Seeder
         $data_layanan = [
             [
                 'jenis_layanan' => 'Express',
-                'estimasi_waktu' => '1 hari',
+                'estimasi_waktu' => '1',
                 'tarif' => '7000',
             ],
             [
                 'jenis_layanan' => 'Reguler',
-                'estimasi_waktu' => '3 hari',
+                'estimasi_waktu' => '3',
                 'tarif' => '5000',
             ],
         ];

@@ -31,7 +31,7 @@
                     <select name = "layanan" id="layanan" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($layanan as $lyn) : ?>
-                            <option value="<?=$lyn['jenis_layanan']?>"><?=$lyn['jenis_layanan']?></option>
+                            <option value="<?=$lyn['jenis_layanan']?>" <?=$transaksi['layanan'] == $lyn['jenis_layanan'] ? 'selected' :null?>><?=$lyn['jenis_layanan']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -40,14 +40,25 @@
                     <input type="text" name="biaya" class="form-control" id="biaya" value="" disabled>
                 </div>
                 <div class="form-group">
-                    <label>Status Pembayaran :</label>
+                    <label>Status Pembayaran : </label>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="status_pembayaran" name="status_pembayaran" value="Belum Bayar">
-                        <label class="custom-control-label" for="status_pembayaran">Belum Bayar</label>
+                        <input type="radio" class="custom-control-input" id="status_pembayaran" name="status_pembayaran" value="Belum Dibayar" <?= "Belum Dibayar" == $transaksi['status_pembayaran'] ? 'checked' :null?>>
+                        <label class="custom-control-label" for="status_pembayaran">Belum Dibayar</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="status_pembayaran2" name="status_pembayaran" value="Telah Bayar">
-                        <label class="custom-control-label" for="status_pembayaran2">Telah Bayar</label>
+                        <input type="radio" class="custom-control-input" id="status_pembayaran2" name="status_pembayaran" value="Telah Dibayar" <?= "Telah Dibayar" == $transaksi['status_pembayaran'] ? 'checked' :null?>>
+                        <label class="custom-control-label" for="status_pembayaran2">Telah Dibayar</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Status Pengambilan : </label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="status_pengambilan" name="status_pengambilan" value="Belum Diambil" <?= "Belum Diambil" == $transaksi['status_pengambilan'] ? 'checked' :null?>>
+                        <label class="custom-control-label" for="status_pengambilan">Belum Diambil</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="status_pengambilan2" name="status_pengambilan" value="Telah Diambil" <?= "Telah Diambil" == $transaksi['status_pengambilan'] ? 'checked' :null?>>
+                        <label class="custom-control-label" for="status_pengambilan2">Telah Diambil</label>
                     </div>
                 </div>
             </div>

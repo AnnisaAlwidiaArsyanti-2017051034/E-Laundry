@@ -15,7 +15,7 @@
                     <input type="text" name="jenis_layanan" class="form-control" id="jenis_layanan">
                 </div>
                 <div class="form-group">
-                    <label for="estimasi_waktu">Estimasi Waktu</label>
+                    <label for="estimasi_waktu">Estimasi Waktu (hari)</label>
                     <input type="text" name="estimasi_waktu" class="form-control" id="estimasi_waktu">
                 </div>
                 <div class="form-group">

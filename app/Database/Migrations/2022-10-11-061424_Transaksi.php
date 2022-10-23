@@ -32,8 +32,8 @@ class Transaksi extends Migration
                 'null' => 'true',
             ],
             'berat' => [
-                'type' => 'INT',
-                'constraint' => '2',
+                'type' => 'DECIMAL',
+                'constraint' => '5',
             ],
             'layanan' => [
                 'type' => 'VARCHAR',
@@ -44,8 +44,8 @@ class Transaksi extends Migration
                 'null' => 'true',
             ],
             'biaya' => [
-                'type' => 'INT',
-                'constraint' => 7,
+                'type' => 'DECIMAL',
+                'constraint' => 10,
             ],
             'status_pembayaran' => [
                 'type' => 'VARCHAR',

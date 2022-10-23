@@ -14,7 +14,7 @@ class Transaksi extends Seeder
                 'nomor_tlp_pelanggan' => '082281301196',
                 'alamat_pelanggan' => 'Hanura',
                 'tanggal_masuk' => Time::now(),
-                'berat' => '3',
+                'berat' => '2',
             ],
         ];
 

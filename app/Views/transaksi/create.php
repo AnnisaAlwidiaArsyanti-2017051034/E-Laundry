@@ -35,18 +35,18 @@
                         <input type="text" name="berat" class="form-control" id="berat">
                     </div>
                     <div class="form-group">
-                        <label for="biaya">Biaya</label>
+                        <label for="biaya">Biaya</label>                            
                         <input type="text" name="biaya" class="form-control" id="biaya" value="" disabled>
                     </div>
                     <div class="form-group">
-                        <label>Status Pembayaran :</label>
+                        <label>Status Pembayaran : </label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="status_pembayaran" name="status_pembayaran" value="Belum Bayar">
-                            <label class="custom-control-label" for="status_pembayaran">Belum Bayar</label>
+                            <input type="radio" class="custom-control-input" id="status_pembayaran" name="status_pembayaran" value="Belum Dibayar">
+                            <label class="custom-control-label" for="status_pembayaran">Belum Dibayar</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="status_pembayaran2" name="status_pembayaran" value="Telah Bayar">
-                            <label class="custom-control-label" for="status_pembayaran2">Telah Bayar</label>
+                            <input type="radio" class="custom-control-input" id="status_pembayaran2" name="status_pembayaran" value="Telah Dibayar">
+                            <label class="custom-control-label" for="status_pembayaran2">Telah Dibayar</label>
                         </div>
                     </div>                    
                 </div>
