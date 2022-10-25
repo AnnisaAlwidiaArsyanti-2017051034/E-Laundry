@@ -50,7 +50,7 @@
                     <th scope="row"><?=$no?></th>
                     <td><?=$lyn['jenis_layanan']?></td>
                     <td><?=$lyn['estimasi_waktu']?> hari</td>
-                    <td><?=$lyn['tarif']?></td>
+                    <td>Rp <?= number_format($lyn['tarif'],0,",",".");?></td>
                     <td>
                       <div class="d-flex">
                         <a href="/editLayanan/<?= $lyn['layanan_id'] ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a>                    

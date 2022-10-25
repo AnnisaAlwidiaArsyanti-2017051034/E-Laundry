@@ -34,6 +34,14 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
+        <a class="nav-link" href="/user">
+        <i class="fas fa-fw fa-user"></i>
+        <span>Pengguna</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
         <a class="nav-link" href="#">
         <i class="fas fa-fw fa-book"></i>
         <span>Laporan Pendapatan</span></a>

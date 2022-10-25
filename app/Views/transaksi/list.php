@@ -51,7 +51,6 @@
               </thead>
               <tbody>
                 <?php
-                  $no = 1;
                   foreach ($transaksi as $trans) :
                 ?>
                 <tr>
@@ -64,8 +63,20 @@
                   <td><?=$trans['layanan']?></td>
                   <td><?=$trans['tanggal_keluar']?></td>
                   <td><?=$trans['biaya']?></td>
-                  <td><?=$trans['status_pembayaran']?></td>
-                  <td><?=$trans['status_pengambilan']?></td>
+                  <td><?php
+                        if($trans['status_pembayaran'] == "Belum Dibayar"){ ?>
+                        <span class="badge badge-warning"><?=$trans['status_pembayaran']; ?></span>
+                        <?php } else { ?>
+                        <span class="badge badge-success"><?=$trans['status_pembayaran']; ?></span>
+                        <?php } ?>
+                  </td>
+                  <td><?php
+                        if($trans['status_pengambilan'] == "Belum Diambil"){ ?>
+                        <span class="badge badge-warning"><?=$trans['status_pengambilan']; ?></span>
+                        <?php } else { ?>
+                        <span class="badge badge-success"><?=$trans['status_pengambilan']; ?></span>
+                        <?php } ?>
+                  </td>
                   <td>
                     <div class="d-flex">
                       <a href="/editTransaksi/<?= $trans['no_invoice'] ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>                    
@@ -76,7 +87,7 @@
                     </div>
                   </td>
                 </tr>
-                <?php $no++; endforeach; ?>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>

@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label for="biaya">Biaya</label>                            
-                        <input type="text" name="biaya" class="form-control" id="biaya" value="" disabled>
+                        <input type="text" name="biaya" class="form-control" id="biaya" readonly>
                     </div>
                     <div class="form-group">
                         <label>Status Pembayaran : </label>

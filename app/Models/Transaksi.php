@@ -15,5 +15,5 @@ class Transaksi extends Model
     protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'berat', 'layanan', 'biaya', 'status_pembayaran', 'status_pengambilan'];
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'tanggal_masuk';
-    protected $updatedField ='';
+    protected $updatedField = '';
 }
