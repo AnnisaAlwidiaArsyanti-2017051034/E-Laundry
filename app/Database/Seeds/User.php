@@ -10,11 +10,11 @@ class User extends Seeder
     {
         $data_user = [
             [
-                'nama' => 'Annisa Arsya',
-                'email' => 'kimarsya2409@gmail.com',
-                'username' => 'arsya2409',
-                'password' => '12345678',
-                'level' => 'Super Admin',
+                'nama_pengguna' => 'Annisa Arsya',
+                'email_pengguna' => 'kimarsya2409@gmail.com',
+                'username_pengguna' => 'arsya2409',
+                'password_pengguna' => '12345678',
+                'level_pengguna' => 'Super Admin',
             ],
         ];
 

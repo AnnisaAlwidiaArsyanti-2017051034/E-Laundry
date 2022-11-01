@@ -28,7 +28,7 @@ class Transaksi extends Migration
                 'constraint' => '255',
             ],
             'tanggal_masuk' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => 'true',
             ],
             'berat' => [
@@ -36,11 +36,12 @@ class Transaksi extends Migration
                 'constraint' => '5',
             ],
             'layanan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
             ],
             'tanggal_keluar' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => 'true',
             ],
             'biaya' => [

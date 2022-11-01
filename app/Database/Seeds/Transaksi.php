@@ -13,7 +13,7 @@ class Transaksi extends Seeder
                 'nama_pelanggan' => 'Annisa',
                 'nomor_tlp_pelanggan' => '082281301196',
                 'alamat_pelanggan' => 'Hanura',
-                'tanggal_masuk' => Time::now(),
+                'layanan' => '2',
                 'berat' => '2',
             ],
         ];

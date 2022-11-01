@@ -14,7 +14,9 @@
             rel="stylesheet">
         <!-- Custom styles for this template-->
         <link href="<?= base_url('assets/sbadmin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
-        <script type="text/javascript" src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/sbadmin/js/sb-admin-2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
 
         <?= $this->renderSection('styles') ?>
     </head>
@@ -79,7 +81,11 @@
         <script src="<?= base_url('assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
         <!-- Custom scripts for all pages-->
         <script src="<?= base_url('assets/sbadmin/js/sb-admin-2.min.js') ?>"></script>
-
+        <!-- Page level plugins -->
+        <script src="assets/sbadmin/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/sbadmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="assets/sbadmin/js/demo/datatables-demo.js"></script>
         <?= $this->renderSection('scripts') ?>
     </body>
 </html>

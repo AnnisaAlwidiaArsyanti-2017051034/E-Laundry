@@ -23,6 +23,10 @@
                     <input type="text" name="alamat_pelanggan" class="form-control" id="alamat_pelanggan" value="<?= $transaksi['alamat_pelanggan']?>">
                 </div>
                 <div class="form-group">
+                    <label for="tanggal_masuk">Tanggal Masuk</label>
+                    <input type="date" name="tanggal_masuk" class="form-control" id="tanggal_masuk" value="<?= $transaksi['tanggal_masuk']?>">
+                </div>
+                <div class="form-group">
                     <label for="berat">Berat</label>
                     <input type="text" name="berat" class="form-control" id="berat" value="<?= $transaksi['berat']?>">
                 </div>
@@ -31,13 +35,17 @@
                     <select name = "layanan" id="layanan" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($layanan as $lyn) : ?>
-                            <option value="<?=$lyn['jenis_layanan']?>" <?=$transaksi['layanan'] == $lyn['jenis_layanan'] ? 'selected' :null?>><?=$lyn['jenis_layanan']?></option>
+                            <option value="<?=$lyn['layanan_id']?>" <?=$transaksi['layanan'] == $lyn['layanan_id'] ? 'selected' :null?>><?=$lyn['jenis_layanan']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="tanggal_keluar">Tanggal Keluar</label>                            
+                    <input type="date" name="tanggal_keluar" class="form-control" id="tanggal_keluar" value="<?= $transaksi['tanggal_keluar']?>" readonly>
+                </div>
+                <div class="form-group">
                     <label for="biaya">Biaya</label>
-                    <input type="text" name="biaya" class="form-control" id="biaya" value="" disabled>
+                    <input type="text" name="biaya" class="form-control" id="biaya" value="<?= $transaksi['biaya']?>" readonly>
                 </div>
                 <div class="form-group">
                     <label>Status Pembayaran : </label>

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Transaksi;
-use App\Controllers\LayananController;
 use App\Models\Layanan;
 
 class TransaksiController extends BaseController
@@ -37,8 +36,9 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
+            'tanggal_masuk' => 'required',            
             'berat' => 'required',
-            'layanan' => 'required|string',
+            'layanan' => 'required',
             'status_pembayaran' => 'required', 
         ])){
             return redirect()->to('/createTransaksi');
@@ -48,11 +48,11 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'nomor_tlp_pelanggan' => $this->request->getPost('nomor_tlp_pelanggan'),
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
+            'tanggal_masuk' => $this->request->getPost('tanggal_masuk'),
             'berat' => $this->request->getPost('berat'),
             'layanan' => $this->request->getPost('layanan'),
             'biaya' => $this->request->getPost('biaya'),
             'status_pembayaran' => $this->request->getPost('status_pembayaran'),            
-            'status_pengambilan' => $this->request->getPost('status_pengambilan'),
         ];
         $transaksiModel->save($data);
         return redirect()->to('/transaksi');
@@ -83,6 +83,7 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
+            'tanggal_masuk' => 'required',            
             'berat' => 'required',
             'layanan' => 'required|string',
             'status_pembayaran' => 'required',            
@@ -95,6 +96,7 @@ class TransaksiController extends BaseController
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'nomor_tlp_pelanggan' => $this->request->getPost('nomor_tlp_pelanggan'),
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
+            'tanggal_masuk' => $this->request->getPost('tanggal_masuk'),
             'berat' => $this->request->getPost('berat'),
             'layanan' => $this->request->getPost('layanan'),
             'biaya' => $this->request->getPost('biaya'),
@@ -104,5 +106,6 @@ class TransaksiController extends BaseController
         $transaksiModel->update($no_invoice, $data);
         return redirect()->to('/transaksi');
     }
+
 
 }

@@ -51,6 +51,12 @@ $routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1');
 $routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1');
 $routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1');
 $routes->get('/user', 'UserController::index');
+$routes->get('/createUser', 'UserController::create');
+$routes->post('/storeUser', 'UserController::store');
+$routes->get('/editUser/(:num)', 'UserController::edit/$1');
+$routes->post('/updateUser/(:num)', 'UserController::update/$1');
+$routes->post('/deleteUser/(:num)', 'UserController::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -8,8 +8,8 @@ class User extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'user';
-    protected $primaryKey       = 'user_id';
+    protected $primaryKey       = 'id_pengguna';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $allowedFields    = ['username', 'password'];
+    protected $allowedFields    = ['nama_pengguna', 'email_pengguna', 'username_pengguna', 'password_pengguna', 'level_pengguna'];
 }

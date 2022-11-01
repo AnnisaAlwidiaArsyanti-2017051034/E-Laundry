@@ -9,11 +9,8 @@ class Transaksi extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'transaksi';
     protected $primaryKey       = 'no_invoice';
-    protected $useAutoIncrement = true;    
-    protected $useTimestamps = true;
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'berat', 'layanan', 'biaya', 'status_pembayaran', 'status_pengambilan'];
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'tanggal_masuk';
-    protected $updatedField = '';
+    protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'tanggal_masuk', 'berat', 'layanan', 'tanggal_keluar', 'biaya', 'status_pembayaran', 'status_pengambilan'];
+    protected $dateFormat    = 'date';
 }
