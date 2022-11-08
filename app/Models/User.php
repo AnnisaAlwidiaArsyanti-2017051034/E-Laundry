@@ -6,10 +6,19 @@ use CodeIgniter\Model;
 
 class User extends Model
 {
-    protected $DBGroup          = 'default';
+    // protected $DBGroup          = 'default';
     protected $table            = 'user';
-    protected $primaryKey       = 'id_pengguna';
-    protected $useAutoIncrement = true;
-    protected $insertID         = 0;
-    protected $allowedFields    = ['nama_pengguna', 'email_pengguna', 'username_pengguna', 'password_pengguna', 'level_pengguna'];
+    // protected $primaryKey       = 'user_id';
+    // protected $useAutoIncrement = true;
+    // protected $insertID         = 0;
+    protected $allowedFields    = ['nama', 'email', 'username', 'password', 'role'];
+
+    public function getUser($username = false)
+    {
+        if ($username == false) {
+            return $this->orderBy('role', 'ASC')->findAll();
+        }
+
+        return $this->where('username', $username)->first();
+    }
 }
