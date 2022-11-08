@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="berat">Berat</label>
-                    <input type="text" name="berat" class="form-control" id="berat" value="<?= $transaksi['berat']?>">
+                    <input type="number" name="berat" class="form-control" id="berat" value="<?= $transaksi['berat']?>">
                 </div>
                 <div class="form-group">
                     <label for="layanan">Pilih Layanan</label>
@@ -77,4 +77,48 @@
         </form>
     </div>
 </div>
+<script src="<?= base_url('assets/sbadmin/vendor/jquery/jquery.min.js') ?>"></script>
+<script src="<?= base_url('assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#layanan').change(function() {
+            var layanan_id = $('#layanan').val();
+            var berat = $('#berat').val();
+            var action = 'get_layanan';
+
+            $('#tanggal_masuk').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $('#tanggal_keluar').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+
+            $.ajax({
+                url: "<?php echo site_url('/getLayanan'); ?>",
+                method: "post",
+                data: {
+                    layanan_id: layanan_id,
+                    action: action
+                },
+                dataType: "JSON",
+                success: function(data) {
+                    $('#biaya').val(data[0].tarif * berat);
+                    var tanggal_masuk = $('#tanggal_masuk').datepicker('getDate');
+                    var date = new Date(Date.parse(tanggal_masuk));
+                    date.setDate(date.getDate() + +data[0].estimasi_waktu);
+
+                    var newDate = date.toDateString();
+                    newDate = new Date(Date.parse(newDate));
+
+                    $('#tanggal_keluar').datepicker('setDate', newDate);
+
+                }
+            });
+        });
+
+    });
+</script>
 <?= $this->endSection(); ?>

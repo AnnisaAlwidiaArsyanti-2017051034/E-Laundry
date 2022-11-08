@@ -29,7 +29,6 @@ class Transaksi extends Migration
             ],
             'tanggal_masuk' => [
                 'type' => 'DATE',
-                'null' => 'true',
             ],
             'berat' => [
                 'type' => 'DECIMAL',
@@ -42,7 +41,6 @@ class Transaksi extends Migration
             ],
             'tanggal_keluar' => [
                 'type' => 'DATE',
-                'null' => 'true',
             ],
             'biaya' => [
                 'type' => 'DECIMAL',

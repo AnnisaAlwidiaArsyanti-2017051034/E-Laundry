@@ -37,33 +37,33 @@
                   foreach ($transaksi as $trans) :
                 ?>
                 <tr>
-                  <th><?=$trans['no_invoice']?></th>
-                  <td><?=$trans['nama_pelanggan']?></td>
-                  <td><?=$trans['nomor_tlp_pelanggan']?></td>
-                  <td><?=$trans['alamat_pelanggan']?></td>
-                  <td><?=$trans['tanggal_masuk']?></td>
-                  <td><?=$trans['berat']?> KG</td>
-                  <td><?=$trans['layanan']?></td>
-                  <td><?=$trans['tanggal_keluar']?></td>
-                  <td><?=$trans['biaya']?></td>
+                  <th><?php echo $trans->no_invoice ?></th>
+                  <td><?php echo $trans->nama_pelanggan ?></td>
+                  <td><?php echo $trans->nomor_tlp_pelanggan ?></td>
+                  <td><?php echo $trans->alamat_pelanggan ?></td>
+                  <td><?php echo $trans->tanggal_masuk ?></td>
+                  <td><?php echo $trans->berat ?> KG</td>
+                  <td><?php echo $trans->jenis_layanan ?></td>
+                  <td><?php echo $trans->tanggal_keluar ?></td>
+                  <td>Rp <?php echo $trans->biaya ?></td>
                   <td><?php
-                        if($trans['status_pembayaran'] == "Belum Dibayar"){ ?>
-                        <span class="badge badge-warning"><?=$trans['status_pembayaran']; ?></span>
+                        if($trans->status_pembayaran == "Belum Dibayar"){ ?>
+                        <span class="badge badge-warning"><?=$trans->status_pembayaran; ?></span>
                         <?php } else { ?>
-                        <span class="badge badge-success"><?=$trans['status_pembayaran']; ?></span>
+                        <span class="badge badge-success"><?=$trans->status_pembayaran; ?></span>
                         <?php } ?>
                   </td>
                   <td><?php
-                        if($trans['status_pengambilan'] == "Belum Diambil"){ ?>
-                        <span class="badge badge-warning"><?=$trans['status_pengambilan']; ?></span>
+                        if($trans->status_pengambilan == "Belum Diambil"){ ?>
+                        <span class="badge badge-warning"><?=$trans->status_pengambilan; ?></span>
                         <?php } else { ?>
-                        <span class="badge badge-success"><?=$trans['status_pengambilan']; ?></span>
+                        <span class="badge badge-success"><?=$trans->status_pengambilan; ?></span>
                         <?php } ?>
                   </td>
                   <td>
                     <div class="d-flex">
-                      <a href="/editTransaksi/<?= $trans['no_invoice'] ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>&nbsp;                    
-                      <form action="/deleteTransaksi/<?= $trans['no_invoice'] ?>" method="post">
+                      <a href="/editTransaksi/<?= $trans->no_invoice ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>&nbsp;                    
+                      <form action="/deleteTransaksi/<?= $trans->no_invoice ?>" method="post">
                         <input type="hidden" name="_methode" value="DELETE">
                         <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
                       </form>

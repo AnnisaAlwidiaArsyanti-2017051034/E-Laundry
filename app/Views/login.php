@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-Laundry - Login</title>
+    <title>Laundry - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="/assets/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

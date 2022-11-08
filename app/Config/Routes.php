@@ -57,6 +57,8 @@ $routes->get('/editUser/(:num)', 'UserController::edit/$1');
 $routes->post('/updateUser/(:num)', 'UserController::update/$1');
 $routes->post('/deleteUser/(:num)', 'UserController::delete/$1');
 
+$routes->post('/getLayanan/', 'TransaksiController::getLayanan');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
