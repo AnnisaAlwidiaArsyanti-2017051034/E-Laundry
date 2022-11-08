@@ -46,3 +46,4 @@ class Login extends BaseController
         return view('Views/login');
     }
 }
+
