@@ -1,10 +1,10 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
             <img src="\assets\washing-machine.png" width="35px" alt="brand">
         </div>
-        <div class="sidebar-brand-text mx-3">E-Laundry</div>
+        <div class="sidebar-brand-text mx-3">Laundry</div>
     </a>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">

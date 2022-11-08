@@ -9,16 +9,17 @@ class User extends Seeder
     public function run()
     {
         $data_user = [
+
             [
-                'nama_pengguna' => 'Annisa Arsya',
-                'email_pengguna' => 'kimarsya2409@gmail.com',
-                'username_pengguna' => 'arsya2409',
-                'password_pengguna' => '12345678',
-                'level_pengguna' => 'Super Admin',
+                'nama' => 'arsya',
+                'email' => 'kimarsya201@gmail.com',
+                'username' => 'arsya',
+                'password' => '12345arsya',
+                'role' => 'Admin',
             ],
         ];
 
-        foreach($data_user as $data){
+        foreach ($data_user as $data) {
             $this->db->table('user')->insert($data);
         }
     }
