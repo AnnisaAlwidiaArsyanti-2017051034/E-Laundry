@@ -27,12 +27,21 @@
                     <input type="password" name="password" class="form-control" id="password" value="<?= $user['password'] ?>">
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
                     <label for="role">Level Pengguna</label>
                     <select name="role" id="role" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <option value="Super Admin" <?= "Super Admin" == $user['role'] ? 'selected' : null ?>>Super Admin</option>
                         <option value="Admin" <?= "Admin" == $user['role'] ? 'selected' : null ?>>Admin</option>
                         <option value="Manager" <?= "Manager" == $user['role'] ? 'selected' : null ?>>Manager</option>
+=======
+                    <label for="level">Level Pengguna</label>
+                    <select name="level" id="level" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <option value="Super Admin" <?= "Super Admin" == $user['level'] ? 'selected' : null ?>>Super Admin</option>
+                        <option value="Admin" <?= "Admin" == $user['level'] ? 'selected' : null ?>>Admin</option>
+                        <option value="Manager" <?= "Manager" == $user['level'] ? 'selected' : null ?>>Manager</option>
+>>>>>>> 5dcbec202b6a21da831f460619e6ad883d9563cd
                     </select>
                 </div>
             </div>

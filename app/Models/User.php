@@ -12,6 +12,10 @@ class User extends Model
     // protected $useAutoIncrement = true;
     // protected $insertID         = 0;
     protected $allowedFields    = ['nama', 'email', 'username', 'password', 'role'];
+<<<<<<< HEAD
+=======
+    protected $useTimestamps = true;
+>>>>>>> 5dcbec202b6a21da831f460619e6ad883d9563cd
 
     public function getUser($username = false)
     {

@@ -26,8 +26,13 @@
                     <input type="password" name="password" class="form-control" id="password">
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
                     <label for="role">Level Pengguna</label>
                     <select name="role" id="role" class="form-control" required>
+=======
+                    <label for="level">Level Pengguna</label>
+                    <select name="level" id="level" class="form-control" required>
+>>>>>>> 5dcbec202b6a21da831f460619e6ad883d9563cd
                         <option value="" hidden>--Pilih--</option>
                         <option value="Super Admin">Super Admin</option>
                         <option value="Admin">Admin</option>
