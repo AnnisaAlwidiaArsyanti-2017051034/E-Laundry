@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Laundry - Login</title>
+    <title>E-Laundry - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="/assets/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,12 +40,26 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-5">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="username" class="form-control form-control-user" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Username" required>
+                                    <?php var_dump(session('nama')); ?>
+                                    <?= session()->get('pesan') ?>
+
+
+                                    <form action='/login' method="post">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" name="username" placeholder="Username">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fas fa-envelope"></span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required>
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fas fa-lock"></span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -51,8 +67,8 @@
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
-                                        <a href="/home" class="btn btn-primary btn-user btn-block">
-                                            Login
+                                        <input type="submit" name="login" class="btn btn-primary btn-user btn-block" VALUE="LOGIN">
+
                                         </a>
                                     </form>
                                     <hr>
@@ -83,4 +99,6 @@
 
 
 
-</body></html>
+</body>
+
+</html>
