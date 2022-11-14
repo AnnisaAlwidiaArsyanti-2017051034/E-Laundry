@@ -22,4 +22,14 @@ class Transaksi extends Model
          ->get();  
         return $query;
     }
+    public function getTransaksi()
+    {             
+        $query =  $this->db->table('transaksi')
+         ->get();  
+        return $query;
+    }
+    // public function getTransaksiHariIni(){
+    //     $hariini = date("Y-m-d");
+    //     return $this->db->get_where('transaksi', array('tanggal_masuk', $hariini));
+    // }
 }

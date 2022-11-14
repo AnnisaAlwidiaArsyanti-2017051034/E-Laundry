@@ -28,6 +28,19 @@ class TransaksiController extends BaseController
         );
         return view('transaksi/list', $data);
     }
+    public function detail($no_invoice)
+    {
+        $transaksiModel = new Transaksi();
+        $transaksi = $transaksiModel->find($no_invoice);
+
+        // var_dump($transaksiModel);
+        $data = array(
+            'title' => 'Transaksi',
+            'transaksi' => $transaksi,
+            // 'query' => $query,
+        );
+        return view('transaksi/detail', $data);
+    }
     public function create()
     {
 

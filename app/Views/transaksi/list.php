@@ -20,12 +20,9 @@
                 <tr role="row">
                   <th scope="col">No Invoice</th>
                   <th scope="col">Nama Pelanggan</th>
-                  <th scope="col">No. Telp. Pelanggan</th>
-                  <th scope="col">Alamat Pelanggan</th>
                   <th scope="col">Tanggal Masuk</th>
                   <th scope="col">Berat</th>
                   <th scope="col">Layanan</th>
-                  <th scope="col">Tanggal Keluar</th>
                   <th scope="col">Biaya</th>
                   <th scope="col">Status Pembayaran</th>
                   <th scope="col">Status Pengembalian</th>
@@ -39,12 +36,9 @@
                 <tr>
                   <th><?php echo $trans->no_invoice ?></th>
                   <td><?php echo $trans->nama_pelanggan ?></td>
-                  <td><?php echo $trans->nomor_tlp_pelanggan ?></td>
-                  <td><?php echo $trans->alamat_pelanggan ?></td>
-                  <td><?php echo $trans->tanggal_masuk ?></td>
+                  <td><?php echo date('d/m/Y', strtotime($trans->tanggal_masuk));?></td>
                   <td><?php echo $trans->berat ?> KG</td>
                   <td><?php echo $trans->jenis_layanan ?></td>
-                  <td><?php echo $trans->tanggal_keluar ?></td>
                   <td>Rp <?php echo $trans->biaya ?></td>
                   <td><?php
                         if($trans->status_pembayaran == "Belum Dibayar"){ ?>
@@ -62,7 +56,7 @@
                   </td>
                   <td>
                     <div class="d-flex">
-                      <a href="/editTransaksi/<?= $trans->no_invoice ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>&nbsp;                    
+                      <a href="/detailTransaksi/<?= $trans->no_invoice ?>"><button class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></button></a>&nbsp;                    
                       <form action="/deleteTransaksi/<?= $trans->no_invoice ?>" method="post">
                         <input type="hidden" name="_methode" value="DELETE">
                         <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
