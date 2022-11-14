@@ -9,10 +9,10 @@ class Transaksi extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'transaksi';
-    protected $primaryKey       = 'no_invoice';
+    protected $primaryKey       = 'id_transaksi';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
-    protected $allowedFields    = ['nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'tanggal_masuk', 'berat', 'layanan', 'tanggal_keluar', 'biaya', 'status_pembayaran', 'status_pengambilan'];
+    protected $allowedFields    = ['no_invoice','nama_pelanggan', 'nomor_tlp_pelanggan', 'alamat_pelanggan', 'tanggal_masuk', 'berat', 'layanan', 'tanggal_keluar', 'biaya', 'status_pembayaran', 'status_pengambilan'];
     protected $dateFormat    = 'date';
 
     public function getLayanan()
@@ -22,14 +22,29 @@ class Transaksi extends Model
          ->get();  
         return $query;
     }
-    public function getTransaksi()
-    {             
-        $query =  $this->db->table('transaksi')
-         ->get();  
+    public function getTotalDay($day){
+        $query =  $this->db->table('transaksi')->select('SUM(biaya) as total')->where('tanggal_masuk',$day)->get()->getResultArray();
         return $query;
     }
-    // public function getTransaksiHariIni(){
-    //     $hariini = date("Y-m-d");
-    //     return $this->db->get_where('transaksi', array('tanggal_masuk', $hariini));
-    // }
+
+    public function getTotalMont($mont){
+        $query =  $this->db->table('transaksi')->select('SUM(biaya) as total')->where('EXTRACT(YEAR_MONTH FROM tanggal_masuk)',$mont)->get()->getResultArray();
+        return $query;
+    }
+    public function getTotalYear($year){
+        $query =  $this->db->table('transaksi')->select('SUM(biaya) as total')->where('EXTRACT(YEAR FROM tanggal_masuk)',$year)->get()->getResultArray();
+        return $query;
+    }
+    public function getTotalSelamaIni(){
+        $query =  $this->db->table('transaksi')->select('SUM(biaya) as total')->get()->getResultArray();
+        return $query;
+    }
+    public function getInvoice(){
+        $query = $this->db->table('transaksi')->select ('MAX(id_transaksi) as kodeTerbesar')->get()->getResultArray();
+        return $query;
+    }
+    public function getTransbyBayar(){
+        $query=$this->db->table('transaksi')->select('status_pembayaran, COUNT(status_pembayaran) as total')->groupBy('status_pembayaran')->get()->getResultArray();
+        return $query;
+    }
 }

@@ -28,26 +28,24 @@ class TransaksiController extends BaseController
         );
         return view('transaksi/list', $data);
     }
-    public function detail($no_invoice)
+    public function detail($id_transaksi)
     {
         $transaksiModel = new Transaksi();
-        $transaksi = $transaksiModel->find($no_invoice);
+        $transaksi = $transaksiModel->join('layanan','layanan.layanan_id = transaksi.layanan')->where('id_transaksi', $id_transaksi)->first();
 
         // var_dump($transaksiModel);
         $data = array(
             'title' => 'Transaksi',
-            'transaksi' => $transaksi,
+            'trans' => $transaksi,
             // 'query' => $query,
         );
+
+        // dd($data);
         return view('transaksi/detail', $data);
     }
     public function create()
     {
-
-
         $layananModel = new Layanan();
-
-
         $layanan = $layananModel->findAll();
         $transaksiModel = new Transaksi();
         $transaksi = $transaksiModel->findAll();
@@ -55,6 +53,7 @@ class TransaksiController extends BaseController
             'title' => 'Tambah Transaksi',
             'layanan' => $layanan,
             'transaksi' => $transaksi,
+            'kode' => (new Transaksi())->getInvoice(),
         ];
         return view('transaksi/create', $data);
     }
@@ -78,6 +77,7 @@ class TransaksiController extends BaseController
     public function store()
     {
         if (!$this->validate([
+            'no_invoice' => 'required',
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
@@ -90,6 +90,7 @@ class TransaksiController extends BaseController
         }
         $transaksiModel = new Transaksi();
         $data = [
+            'no_invoice' => $this->request->getPost('no_invoice'),
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'nomor_tlp_pelanggan' => $this->request->getPost('nomor_tlp_pelanggan'),
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
@@ -104,18 +105,18 @@ class TransaksiController extends BaseController
         return redirect()->to('/transaksi');
     }
 
-    public function delete($no_invoice)
+    public function delete($id_transaksi)
     {
         $transaksiModel = new Transaksi();
-        $transaksiModel->delete($no_invoice);
+        $transaksiModel->delete($id_transaksi);
 
         return redirect()->to('/transaksi');
     }
 
-    public function edit($no_invoice)
+    public function edit($id_transaksi)
     {
         $transaksiModel = new Transaksi();
-        $transaksi = $transaksiModel->find($no_invoice);
+        $transaksi = $transaksiModel->find($id_transaksi);
         $layananModel = new Layanan();
         $layanan = $layananModel->findAll();
         $data = [
@@ -126,9 +127,10 @@ class TransaksiController extends BaseController
         return view('transaksi/edit', $data);
     }
 
-    public function update($no_invoice)
+    public function update($id_transaksi)
     {
         if (!$this->validate([
+            'no_invoice' => 'required',
             'nama_pelanggan' => 'required|string',
             'nomor_tlp_pelanggan' => 'required|numeric',
             'alamat_pelanggan' => 'required|string',
@@ -138,10 +140,11 @@ class TransaksiController extends BaseController
             'status_pembayaran' => 'required',
             'status_pengambilan' => 'required',
         ])) {
-            return redirect()->to('/editTransaksi/' . $no_invoice);
+            return redirect()->to('/editTransaksi/' . $id_transaksi);
         }
         $transaksiModel = new Transaksi();
         $data = [
+            'no_invoice' => $this->request->getPost('no_invoice'),
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'nomor_tlp_pelanggan' => $this->request->getPost('nomor_tlp_pelanggan'),
             'alamat_pelanggan' => $this->request->getPost('alamat_pelanggan'),
@@ -152,7 +155,7 @@ class TransaksiController extends BaseController
             'status_pembayaran' => $this->request->getPost('status_pembayaran'),
             'status_pengambilan' => $this->request->getPost('status_pengambilan'),
         ];
-        $transaksiModel->update($no_invoice, $data);
-        return redirect()->to('/transaksi');
+        $transaksiModel->update($id_transaksi, $data);
+        return redirect()->to('/detailTransaksi/'. $id_transaksi);
     }
 }

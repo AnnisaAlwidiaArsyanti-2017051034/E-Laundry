@@ -9,11 +9,15 @@ class Transaksi extends Migration
     public function up()
     {
         $this->forge->addField([
-            'no_invoice' => [
+            'id_transaksi' => [
                 'type'           => 'INT',
-                'constraint'     => 5,
+                'constraint'     => 10,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],
+            'no_invoice' => [
+                'type'           => 'CHAR',
+                'constraint'     => '10',
             ],
             'nama_pelanggan' => [
                 'type' => 'VARCHAR',
@@ -32,11 +36,11 @@ class Transaksi extends Migration
             ],
             'berat' => [
                 'type' => 'DECIMAL',
-                'constraint' => '5',
+                'constraint' => '4,2',
             ],
             'layanan' => [
                 'type' => 'INT',
-                'constraint' => 5,
+                'constraint' => 10,
                 'unsigned' => true,
             ],
             'tanggal_keluar' => [
@@ -44,7 +48,7 @@ class Transaksi extends Migration
             ],
             'biaya' => [
                 'type' => 'DECIMAL',
-                'constraint' => 10,
+                'constraint' => '10,0',
             ],
             'status_pembayaran' => [
                 'type' => 'VARCHAR',
@@ -56,7 +60,7 @@ class Transaksi extends Migration
             ],
 
         ]);
-        $this->forge->addKey('no_invoice', true);
+        $this->forge->addKey('id_transaksi', true);
         $this->forge->createTable('transaksi');
     }
 

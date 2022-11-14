@@ -7,11 +7,11 @@ use CodeIgniter\Model;
 class User extends Model
 {
     // protected $DBGroup          = 'default';
-    protected $table            = 'user';
+    protected $table            = 'users';
     // protected $primaryKey       = 'user_id';
     // protected $useAutoIncrement = true;
     // protected $insertID         = 0;
-    protected $allowedFields    = ['nama', 'email', 'username', 'password', 'role'];
+    protected $allowedFields    = ['email', 'username', 'password', 'role'];
 
     public function getUser($username = false)
     {

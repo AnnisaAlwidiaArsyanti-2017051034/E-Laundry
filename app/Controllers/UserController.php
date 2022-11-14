@@ -12,46 +12,46 @@ class UserController extends BaseController
         $this->userModel = new User();
     }
 
-    protected function _validation()
-    {
-        if ($this->validate([
-            'nama' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama harus diisi.'
-                ]
-            ],
-            'username' => [
-                'rules' => 'required|alpha_numeric|is_unique[user.username,id,{id}]',
-                'errors' => [
-                    'required' => 'Username harus diisi.',
-                    'alpha_numeric' => 'Username hanya boleh diisi dengan huruf dan angka.',
-                    'is_unique' => 'Username sudah digunakan.'
-                ]
-            ],
-            'email' => [
-                'rules' => 'required|valid_email',
-                'errors' => [
-                    'required' => 'Email harus diisi.',
-                    'valid_email' => 'Email tidak valid.'
-                ]
-            ],
-            'passsword' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Password harus diisi.'
-                ]
-            ],
-            'role' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Role harus diisi.'
-                ]
-            ]
-        ])) {
-            return true;
-        }
-    }
+    // protected function _validation()
+    // {
+    //     if ($this->validate([
+    //         'nama' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => 'Nama harus diisi.'
+    //             ]
+    //         ],
+    //         'username' => [
+    //             'rules' => 'required|alpha_numeric|is_unique[user.username,id,{id}]',
+    //             'errors' => [
+    //                 'required' => 'Username harus diisi.',
+    //                 'alpha_numeric' => 'Username hanya boleh diisi dengan huruf dan angka.',
+    //                 'is_unique' => 'Username sudah digunakan.'
+    //             ]
+    //         ],
+    //         'email' => [
+    //             'rules' => 'required|valid_email',
+    //             'errors' => [
+    //                 'required' => 'Email harus diisi.',
+    //                 'valid_email' => 'Email tidak valid.'
+    //             ]
+    //         ],
+    //         'passsword' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => 'Password harus diisi.'
+    //             ]
+    //         ],
+    //         'role' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => 'Role harus diisi.'
+    //             ]
+    //         ]
+    //     ])) {
+    //         return true;
+    //     }
+    // }
 
     // public function index()
     // {
@@ -100,7 +100,6 @@ class UserController extends BaseController
     public function store()
     {
         if (!$this->validate([
-            'nama' => 'required|string',
             'email' => 'required',
             'username' => 'required|string',
             'password' => 'required',
@@ -146,7 +145,6 @@ class UserController extends BaseController
             'email' => 'required',
             'username' => 'required|string',
             'password' => 'required',
-            'role' => 'required',
         ])) {
             return redirect()->to('/editUser' . $id);
         }

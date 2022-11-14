@@ -41,7 +41,7 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
+# .env
 .vagrant
 Vagrantfile
 
@@ -79,11 +79,13 @@ tests/coverage*
 
 # Don't save phpunit under version control.
 phpunit
-
+vendor/*
+!vendor/myth
+#1
 #-------------------------
 # Composer
 #-------------------------
-vendor/
+
 
 #-------------------------
 # IDE / Development Files

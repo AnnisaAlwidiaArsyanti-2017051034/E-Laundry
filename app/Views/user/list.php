@@ -19,11 +19,9 @@
                 <thead>
                   <tr role="row">
                     <th scope="col">User ID</th>
-                    <th scope="col">Nama Pengguna</th>
                     <th scope="col">E-mail Pengguna</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">role</th>
+                    <th scope="col">Level</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -33,10 +31,8 @@
                   ?>
                     <tr>
                       <th><?= $u['id'] ?></th>
-                      <td><?= $u['nama'] ?></td>
                       <td><?= $u['email'] ?></td>
                       <td><?= $u['username'] ?></td>
-                      <td><?= $u['password'] ?></td>
                       <td><?= $u['role'] ?></td>
                       <td>
                         <div class="d-flex">

@@ -37,35 +37,30 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth::index');
-$routes->get('/login', 'Auth::index');
+
 $routes->get('auth/login', 'Auth::login');
-$routes->get('/home', 'Dashboard::index');
-$routes->get('/layanan', 'LayananController::index');
-$routes->get('/createLayanan', 'LayananController::create');
-$routes->post('/storeLayanan', 'LayananController::store');
-$routes->get('/editLayanan/(:num)', 'LayananController::edit/$1');
-$routes->post('/updateLayanan/(:num)', 'LayananController::update/$1');
-$routes->post('/deleteLayanan/(:num)', 'LayananController::delete/$1');
-$routes->get('/transaksi', 'TransaksiController::index');
-$routes->get('/createTransaksi', 'TransaksiController::create');
-$routes->post('/storeTransaksi', 'TransaksiController::store');
-$routes->get('/detailTransaksi/(:num)', 'TransaksiController::detail/$1');
-$routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1');
-$routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1');
-$routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1');
-$routes->get('/user', 'UserController::index');
-$routes->get('/createUser', 'UserController::create');
-$routes->post('/storeUser', 'UserController::store');
-$routes->get('/editUser/(:num)', 'UserController::edit/$1');
-$routes->post('/updateUser/(:num)', 'UserController::update/$1');
-$routes->post('/deleteUser/(:num)', 'UserController::delete/$1');
-$routes->get('/logout', 'Auth::logout');
-$routes->group('/', ['filter' => 'auth'], function ($routes) {
 
-    $routes->get('auth/logout', 'Auth::logout');
+$routes->get('/home', 'Dashboard::index', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/layanan', 'LayananController::index', ['filter' => 'role:superadmin,manager']);
+$routes->get('/createLayanan', 'LayananController::create', ['filter' => 'role:superadmin,manager']);
+$routes->post('/storeLayanan', 'LayananController::store', ['filter' => 'role:superadmin,manager']);
+$routes->get('/editLayanan/(:num)', 'LayananController::edit/$1', ['filter' => 'role:superadmin,manager']);
+$routes->post('/updateLayanan/(:num)', 'LayananController::update/$1', ['filter' => 'role:superadmin,manager']);
+$routes->post('/deleteLayanan/(:num)', 'LayananController::delete/$1', ['filter' => 'role:superadmin,manager']);
+$routes->get('/transaksi', 'TransaksiController::index', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/createTransaksi', 'TransaksiController::create', ['filter' => 'role:admin, manager, superadmin']);
+$routes->post('/storeTransaksi', 'TransaksiController::store', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/detailTransaksi/(:num)', 'TransaksiController::detail/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/user', 'UserController::index',['filter' => 'role:superadmin']);
+$routes->get('/createUser', 'UserController::create',['filter' => 'role:superadmin']);
+$routes->post('/storeUser', 'UserController::store',['filter' => 'role:superadmin']);
+$routes->get('/editUser/(:num)', 'UserController::edit/$1',['filter' => 'role:superadmin']);
+$routes->post('/updateUser/(:num)', 'UserController::update/$1',['filter' => 'role:superadmin']);
+$routes->post('/deleteUser/(:num)', 'UserController::delete/$1',['filter' => 'role:superadmin']);
 
-    $routes->get('dashboard', 'Dashboard::index');
-});
 $routes->post('/getLayanan/', 'TransaksiController::getLayanan');
 
 /*
