@@ -30,7 +30,7 @@
                     $no=1;
                     foreach ($user as $u) :?>
                     <tr>
-                      <th><?= $no ?></th>
+                      <th scope="row"><?=$no?></th>
                       <td><?= $u->email ?></td>
                       <td><?= $u->username ?></td>
                       <td><?= implode($u->roles) ?></td>
