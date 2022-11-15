@@ -7,27 +7,32 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tambah Pengguna</h6>
         </div>
-        <form action="/storeUser" method="post">
+        <?= view('Myth\Auth\Views\_message_block') ?>
+        <form action="<?= url_to('createUser') ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <label for="email">E-mail pengguna</label>
-                    <input type="email" name="email" class="form-control" id="email">
+                    <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
+                    <small id="emailHelp" class="form-text text-muted"><?= lang('Auth.weNeverShare') ?></small>
                 </div>
                 <div class="form-group">
                     <label for="username">Username Pengguna</label>
-                    <input type="text" name="username" class="form-control" id="username">
+                    <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
                 </div>
+
                 <div class="form-group">
                     <label for="password">Password Pengguna</label>
-                    <input type="password" name="password" class="form-control" id="password">
+                    <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="role">Level Pengguna</label>
-                    <select name="role" id="role" class="form-control" required>
-                        <option value="" hidden>--Pilih--</option>
-                        <option value="Super Admin">Super Admin</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Manager">Manager</option>
+                            <label for="pass_confirm">Konfirmasi Password</label>
+                            <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
+                        </div>
+                <div class="form-group">
+                    <label for="level">Level Pengguna</label>
+                    <select name="group_id" id="level" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="manager">Manager</option>
                     </select>
                 </div>
             </div>

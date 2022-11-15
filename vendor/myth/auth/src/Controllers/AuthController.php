@@ -139,12 +139,13 @@ class AuthController extends Controller
     public function attemptRegister()
     {
         // Check if registration is allowed
+        $userGroup = $this->request->getPost('group_id');
         if (! $this->config->allowRegistration) {
             return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
 
         $users = model(UserModel::class);
-
+        $users->withGroup($userGroup);
         // Validate basics first since some password rules rely on these fields
         $rules = config('Validation')->registrationRules ?? [
             'username' => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',

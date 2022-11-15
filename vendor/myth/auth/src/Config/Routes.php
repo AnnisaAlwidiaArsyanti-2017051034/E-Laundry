@@ -19,16 +19,13 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], static function ($r
     $routes->get($reservedRoutes['logout'], 'AuthController::logout');
 
     // Registration
-    $routes->get($reservedRoutes['register'], 'AuthController::register', ['as' => $reservedRoutes['register']]);
-    $routes->post($reservedRoutes['register'], 'AuthController::attemptRegister');
+    $routes->get($reservedRoutes['createUser'], 'AuthController::register', ['as' => $reservedRoutes['createUser']],['filter' => 'role:superadmin']);
+    $routes->post($reservedRoutes['createUser'], 'AuthController::attemptRegister',['filter' => 'role:superadmin']);
 
     // Activation
     $routes->get($reservedRoutes['activate-account'], 'AuthController::activateAccount', ['as' => $reservedRoutes['activate-account']]);
     $routes->get($reservedRoutes['resend-activate-account'], 'AuthController::resendActivateAccount', ['as' => $reservedRoutes['resend-activate-account']]);
 
     // Forgot/Resets
-    $routes->get($reservedRoutes['forgot'], 'AuthController::forgotPassword', ['as' => $reservedRoutes['forgot']]);
-    $routes->post($reservedRoutes['forgot'], 'AuthController::attemptForgot');
-    $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
-    $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
+
 });

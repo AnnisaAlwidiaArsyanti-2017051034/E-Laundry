@@ -41,6 +41,7 @@ $routes->get('/', 'Auth::index');
 $routes->get('auth/login', 'Auth::login');
 
 $routes->get('/home', 'Dashboard::index', ['filter' => 'role:admin, manager, superadmin']);
+
 $routes->get('/layanan', 'LayananController::index', ['filter' => 'role:superadmin,manager']);
 $routes->get('/createLayanan', 'LayananController::create', ['filter' => 'role:superadmin,manager']);
 $routes->post('/storeLayanan', 'LayananController::store', ['filter' => 'role:superadmin,manager']);
@@ -59,7 +60,7 @@ $routes->get('/createUser', 'UserController::create',['filter' => 'role:superadm
 $routes->post('/storeUser', 'UserController::store',['filter' => 'role:superadmin']);
 $routes->get('/editUser/(:num)', 'UserController::edit/$1',['filter' => 'role:superadmin']);
 $routes->post('/updateUser/(:num)', 'UserController::update/$1',['filter' => 'role:superadmin']);
-$routes->post('/deleteUser/(:num)', 'UserController::delete/$1',['filter' => 'role:superadmin']);
+$routes->post('/deleteUser/(:num)', 'UserController::delete/$1',['filterp' => 'role:superadmin']);
 
 $routes->post('/getLayanan/', 'TransaksiController::getLayanan');
 

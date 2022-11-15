@@ -18,33 +18,33 @@
               <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                 <thead>
                   <tr role="row">
-                    <th scope="col">User ID</th>
+                    <th scope="col">#</th>
                     <th scope="col">E-mail Pengguna</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Level</th>
+                    <th scope="col">role</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  foreach ($user as $u) :
-                  ?>
+                    $no=1;
+                    foreach ($user as $u) :?>
                     <tr>
-                      <th><?= $u['id'] ?></th>
-                      <td><?= $u['email'] ?></td>
-                      <td><?= $u['username'] ?></td>
-                      <td><?= $u['role'] ?></td>
+                      <th><?= $no ?></th>
+                      <td><?= $u->email ?></td>
+                      <td><?= $u->username ?></td>
+                      <td><?= implode($u->roles) ?></td>
                       <td>
                         <div class="d-flex">
-                          <a href="/editUser/<?= $u['id'] ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>&nbsp;
-                          <form action="/deleteUser/<?= $u['id'] ?>" method="post">
+                          <a href="/editUser/<?= $u->id ?>"><button class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></button></a>&nbsp;
+                          <form action="/deleteUser/<?= $u->id ?>" method="post">
                             <input type="hidden" name="_methode" value="DELETE">
                             <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
                           </form>
                         </div>
                       </td>
                     </tr>
-                  <?php endforeach; ?>
+                  <?php $no++; endforeach; ?>
                 </tbody>
               </table>
             </div>

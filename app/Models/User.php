@@ -11,14 +11,6 @@ class User extends Model
     // protected $primaryKey       = 'user_id';
     // protected $useAutoIncrement = true;
     // protected $insertID         = 0;
-    protected $allowedFields    = ['email', 'username', 'password', 'role'];
+    protected $allowedFields    = ['email','username','password_hash','updated_at'];
 
-    public function getUser($username = false)
-    {
-        if ($username == false) {
-            return $this->orderBy('role', 'ASC')->findAll();
-        }
-
-        return $this->where('username', $username)->first();
-    }
 }

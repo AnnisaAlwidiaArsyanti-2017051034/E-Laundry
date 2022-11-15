@@ -48,7 +48,7 @@ class Auth extends BaseConfig
     public $reservedRoutes = [
         'login'                   => 'login',
         'logout'                  => 'logout',
-        'register'                => 'register',
+        'createUser'              => 'createUser',
         'activate-account'        => 'activate-account',
         'resend-activate-account' => 'resend-activate-account',
         'forgot'                  => 'forgot',
@@ -75,7 +75,7 @@ class Auth extends BaseConfig
      */
     public $views = [
         'login'           => 'App\auth\login',
-        'register'        => 'Myth\Auth\Views\register',
+        'createUser'      => 'App\user\create',
         'forgot'          => 'Myth\Auth\Views\forgot',
         'reset'           => 'Myth\Auth\Views\reset',
         'emailForgot'     => 'Myth\Auth\Views\emails\forgot',
