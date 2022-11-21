@@ -43,8 +43,4 @@ class Transaksi extends Model
         $query = $this->db->table('transaksi')->select ('MAX(id_transaksi) as kodeTerbesar')->get()->getResultArray();
         return $query;
     }
-    public function getTransbyBayar(){
-        $query=$this->db->table('transaksi')->select('status_pembayaran, COUNT(status_pembayaran) as total')->groupBy('status_pembayaran')->get()->getResultArray();
-        return $query;
-    }
 }

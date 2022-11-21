@@ -9,7 +9,7 @@ class Auth extends BaseController
     public function index()
     {
         if ($this->session->get('logged_in')) {
-            return redirect()->to('/home');
+            return redirect()->to('/dashboard');
         }
 
         $data = [
@@ -72,7 +72,7 @@ class Auth extends BaseController
         ];
         $this->session->set($newdata);
 
-        return redirect()->to('/home');
+        return redirect()->to('/dashboard');
     }
 
     public function logout()

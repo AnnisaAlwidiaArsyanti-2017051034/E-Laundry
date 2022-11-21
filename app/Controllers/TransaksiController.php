@@ -20,11 +20,9 @@ class TransaksiController extends BaseController
 
         $transaksi = $this->transaksiModel->getLayanan()->getResult();
 
-        // var_dump($transaksiModel);
         $data = array(
             'title' => 'Transaksi',
             'transaksi' => $transaksi,
-            // 'query' => $query,
         );
         return view('transaksi/list', $data);
     }
@@ -33,14 +31,11 @@ class TransaksiController extends BaseController
         $transaksiModel = new Transaksi();
         $transaksi = $transaksiModel->join('layanan','layanan.layanan_id = transaksi.layanan')->where('id_transaksi', $id_transaksi)->first();
 
-        // var_dump($transaksiModel);
         $data = array(
             'title' => 'Transaksi',
             'trans' => $transaksi,
-            // 'query' => $query,
         );
 
-        // dd($data);
         return view('transaksi/detail', $data);
     }
     public function create()
@@ -151,6 +146,7 @@ class TransaksiController extends BaseController
             'tanggal_masuk' => $this->request->getPost('tanggal_masuk'),
             'berat' => $this->request->getPost('berat'),
             'layanan' => $this->request->getPost('layanan'),
+            'tanggal_keluar' => $this->request->getPost('tanggal_keluar'),
             'biaya' => $this->request->getPost('biaya'),
             'status_pembayaran' => $this->request->getPost('status_pembayaran'),
             'status_pengambilan' => $this->request->getPost('status_pengambilan'),

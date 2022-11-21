@@ -16,7 +16,7 @@
                                 Transaksi Hari Ini
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 
-                                <?php echo number_format($hari_ini[0]['total'],0,',','.');?>
+                                <?php echo number_format(floatval($hari_ini[0]['total']));?>
                             </div>
                         </div>
                         <div class="col-auto">

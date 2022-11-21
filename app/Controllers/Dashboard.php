@@ -34,7 +34,7 @@ class Dashboard extends BaseController
             'transbyambil' => $transbyambil,
         ];
 
-        return view('dashboard/home', $data);
+        return view('dashboard/dashboard', $data);
     }
 
     //--------------------------------------------------------------------
