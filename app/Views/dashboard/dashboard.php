@@ -36,7 +36,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Transaksi Bulan Ini
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format(floatval($bulan_ini[0]['total'],0,',','.')); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($bulan_ini[0]['total'],0,',','.'); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -53,7 +53,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Transaksi Tahun Ini
                             </div>
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp <?php echo number_format(floatval($year_ini[0]['total'],0,',','.')); ?></div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp <?php echo number_format($year_ini[0]['total'],0,',','.'); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -70,7 +70,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Transaksi Selama Ini
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format(floatval($selama_ini[0]['total'],0,',','.')); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($selama_ini[0]['total'],0,',','.'); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
