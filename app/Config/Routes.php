@@ -54,8 +54,12 @@ $routes->post('/storeTransaksi', 'TransaksiController::store', ['filter' => 'rol
 $routes->get('/detailTransaksi/(:num)', 'TransaksiController::detail/$1', ['filter' => 'role:admin, manager, superadmin']);
 $routes->get('/editTransaksi/(:num)', 'TransaksiController::edit/$1', ['filter' => 'role:admin, manager, superadmin']);
 $routes->post('/updateTransaksi/(:num)', 'TransaksiController::update/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/printTransaksi/(:num)', 'TransaksiController::print/$1', ['filter' => 'role:admin, manager, superadmin']);
+$routes->get('/thermalTransaksi/(:num)', 'TransaksiController::thermal/$1', ['filter' => 'role:admin, manager, superadmin']);
 $routes->post('/deleteTransaksi/(:num)', 'TransaksiController::delete/$1', ['filter' => 'role:admin, manager, superadmin']);
 $routes->get('/laporan', 'LaporanController::index', ['filter' => 'role:superadmin, manager']);
+$routes->post('/viewLaporan', 'LaporanController::periode_laporan', ['filter' => 'role:superadmin, manager']);
+$routes->get('/printLaporan/(:any)/(:any)', 'LaporanController::printlaporan/$1/$2', ['filter' => 'role:superadmin, manager']);
 $routes->get('/user', 'UserController::index',['filter' => 'role:superadmin']);
 $routes->get('/createUser', 'UserController::create',['filter' => 'role:superadmin']);
 $routes->post('/storeUser', 'UserController::store',['filter' => 'role:superadmin']);
@@ -63,9 +67,6 @@ $routes->get('/editUser/(:num)', 'UserController::edit/$1',['filter' => 'role:su
 $routes->post('/updateUser/(:num)', 'UserController::update/$1',['filter' => 'role:superadmin']);
 $routes->post('/deleteUser/(:num)', 'UserController::delete/$1',['filter' => 'role:superadmin']);
 $routes->post('/getLayanan/', 'TransaksiController::getLayanan', ['filter' => 'role:superadmin, manager']);
-
-$routes->post('/viewLaporan', 'LaporanController::periode_laporan', ['filter' => 'role:superadmin, manager']);
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -52,14 +52,6 @@
             <span>Laporan Pendapatan</span></a>
     </li>
     <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Pengaturan</span></a>
-    </li>
-    <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <?php endif; ?>
     <!-- Sidebar Toggler (Sidebar) -->

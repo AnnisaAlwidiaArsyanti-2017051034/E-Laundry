@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Transaksi;
 use App\Models\Layanan;
-use Config\Database;
 
 class TransaksiController extends BaseController
 {
@@ -32,7 +31,7 @@ class TransaksiController extends BaseController
         $transaksi = $transaksiModel->join('layanan','layanan.layanan_id = transaksi.layanan')->where('id_transaksi', $id_transaksi)->first();
 
         $data = array(
-            'title' => 'Transaksi',
+            'title' => 'Detail Transaksi',
             'trans' => $transaksi,
         );
 
@@ -153,5 +152,27 @@ class TransaksiController extends BaseController
         ];
         $transaksiModel->update($id_transaksi, $data);
         return redirect()->to('/detailTransaksi/'. $id_transaksi);
+    }
+    public function print($id_transaksi)
+    {
+        $transaksiModel = new Transaksi();
+        $transaksi = $transaksiModel->join('layanan','layanan.layanan_id = transaksi.layanan')->where('id_transaksi', $id_transaksi)->first();
+
+        $data = array(
+            'trans' => $transaksi,
+        );
+
+        return view('transaksi/print', $data);
+    }
+    public function thermal($id_transaksi)
+    {
+        $transaksiModel = new Transaksi();
+        $transaksi = $transaksiModel->join('layanan','layanan.layanan_id = transaksi.layanan')->where('id_transaksi', $id_transaksi)->first();
+
+        $data = array(
+            'trans' => $transaksi,
+        );
+
+        return view('transaksi/thermal', $data);
     }
 }

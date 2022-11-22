@@ -19,7 +19,7 @@ class Transaksi extends Model
     {             
         $query =  $this->db->table('transaksi')
          ->join('layanan', 'transaksi.layanan = layanan.layanan_id')
-         ->get();  
+         ->orderBy('id_transaksi', 'DESC')->get();  
         return $query;
     }
     public function getTotalDay($day){

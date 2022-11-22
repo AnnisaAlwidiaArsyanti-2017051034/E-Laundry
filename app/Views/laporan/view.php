@@ -70,11 +70,8 @@
                     </table>
                     </div>
                 </div>
-                    <br>
-                    <a href="<?= site_url('/printLaporan') ?>" target='blank' class="btn btn-primary btn-icon-split"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak</span></a>
-                    <a href="#" target='blank' class="btn btn-danger btn-icon-pdf"><span class="text"><i class="fas fa-file-pdf fa-sm"></i> Export PDF</span></a>
-                    <a href="#" target='blank' class="btn btn-success btn-icon-pdf"><span class="text"><i class="fas fa-file-excel fa-sm"></i> Export Excel</span></a>
-                
+                <br>
+                <a href="<?php echo '/printLaporan/'.$tgl_awal.'/'.$tgl_akhir?>" target='blank' class="btn btn-primary btn-icon-split"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak Laporan</span></a>
             </div>                
         </div>            
     </div>

@@ -72,7 +72,7 @@ class UserController extends BaseController
         $userModel = new User();
         $user = $userModel->findAll();
         $data = [
-            'title' => 'Tambah Pengguna',
+            'title' => 'Tambah User',
             'user' => $user,
         ];
         return view('user/create', $data);
@@ -116,7 +116,7 @@ class UserController extends BaseController
         $user = $userModel->find($id);
 
         $data = [
-            'title' => 'Edit user',
+            'title' => 'Edit User',
             'user' => $user,
         ];
         return view('user/edit', $data);

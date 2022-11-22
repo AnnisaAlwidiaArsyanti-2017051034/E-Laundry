@@ -85,9 +85,9 @@
                 </div>
                 <a href="/editTransaksi/<?= $trans['id_transaksi'] ?>"><button class="btn btn-warning"><i class="fas fa-edit"></i> Edit Transaksi</button></a>&nbsp;                    
                 <!-- Tombol cetak invoice -->
-                <a href="#" target='blank' class="btn btn-primary btn-icon-split"><span class="text"><i class="fas fa-print"></i> Cetak Invoice</span></a>
-                <a href="#" target='blank' class="btn btn-success btn-icon-split"><span class="text"><i class="fas fa-print"></i> Printer Thermal</span></a>
-                <a href="#" target='blank' class="btn btn-danger btn-icon-pdf"><span class="text"><i class="fas fa-file-pdf"></i> Export PDF</span></a>
+                <a href="/printTransaksi/<?= $trans['id_transaksi'] ?>" target='blank' class="btn btn-danger btn-icon-split"><span class="text"><i class="fas fa-print"></i> Cetak Invoice</span></a>
+                <a href="/thermalTransaksi/<?= $trans['id_transaksi'] ?>" target='blank' class="btn btn-info btn-icon-split"><span class="text"><i class="fas fa-print"></i> Printer Thermal</span></a>
+                
             </div>
         <!--rows -->
         </div>

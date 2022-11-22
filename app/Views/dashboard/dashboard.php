@@ -1,5 +1,6 @@
 <?= $this->extend('template/template'); ?>
 <?= $this->section('content'); ?>
+
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -81,27 +82,6 @@
     </div>
     <!-- Content Row -->
     <div class="row">
-        <div class="col-xl-7 col-lg-7">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary" id="judul_grafik" >Pilih Grafik Transaksi</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header"></div>
-                            <a class="dropdown-item" id="transaksi_bulan_ini" href="#">Transaksi Bulan Ini</a>
-                            <a class="dropdown-item" id="transaksi_tahun_ini" href="#">Transaksi Tahun Ini</a>
-                            <a class="dropdown-item" id="semua_transaksi" href="#">Semua Transaksi</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <canvas id="grafik_transaksi"></canvas>
-                </div>
-            </div>
-        </div>
         <div class="col-xl-5 col-lg-5">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
