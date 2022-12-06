@@ -66,7 +66,7 @@ $routes->post('/storeUser', 'UserController::store',['filter' => 'role:superadmi
 $routes->get('/editUser/(:num)', 'UserController::edit/$1',['filter' => 'role:superadmin']);
 $routes->post('/updateUser/(:num)', 'UserController::update/$1',['filter' => 'role:superadmin']);
 $routes->post('/deleteUser/(:num)', 'UserController::delete/$1',['filter' => 'role:superadmin']);
-$routes->post('/getLayanan/', 'TransaksiController::getLayanan', ['filter' => 'role:superadmin, manager']);
+$routes->post('/getLayanan/', 'TransaksiController::getLayanan', ['filter' => 'role:superadmin, manager, admin']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
